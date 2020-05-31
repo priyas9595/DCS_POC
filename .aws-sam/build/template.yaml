@@ -21,17 +21,29 @@ Resources:
           Properties:
             Path: /hello
             Method: get
-  DrivingInsightFunction:
+  HarshDriveFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: DrivingInsightFunction
-      Handler: index.harshDriving
+      CodeUri: HarshDriveFunction
+      Handler: HarshDrive.handler
       Runtime: nodejs12.x
       Events:
-        HarshDriving:
+        HarshDrive:
           Type: Api
           Properties:
-            Path: /harshdriving
+            Path: /harshdrive
+            Method: get
+  OverSpeedFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: OverSpeedFunction
+      Handler: OverSpeed.handler
+      Runtime: nodejs12.x
+      Events:
+        OverSpeed:
+          Type: Api
+          Properties:
+            Path: /OverSpeed
             Method: get
 Outputs:
   HelloWorldApi:
